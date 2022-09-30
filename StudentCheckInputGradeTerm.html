@@ -1,0 +1,2528 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://ctt-sis.hust.edu.vn/DXR.axd?r=0_2944,1_67,1_68,1_69,0_2949,0_2,1_250,1_73,1_249,1_72,1_207,1_204,1_206,1_203-PugLk"
+    />
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <title>CTTBK &#149; CourseGrade</title>
+    <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://ctt-sis.hust.edu.vn/Content/bootstrap/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://ctt-sis.hust.edu.vn/Content/bootstrap/css/bootstrap-combobox.css"
+    />
+    <link rel="stylesheet" href="../Content/docs.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://ctt-sis.hust.edu.vn/Content/Site.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ctt-sis.hust.edu.vn/Content/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://ctt-sis.hust.edu.vn/Content/bootstrap/js/bootstrap-combobox.js"></script>
+    <script src="https://ctt-sis.hust.edu.vn/Content/bootstrap/js/validator.min.js"></script>
+  </head>
+
+  <body id="ctl00_ctl00_Body">
+    <form
+      method="post"
+      action="./StudentCourseGrade.aspx"
+      id="aspnetForm"
+      data-toggle="validator"
+      role="form"
+    >
+      <div class="aspNetHidden">
+        <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+        <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+        <input
+          type="hidden"
+          name="__VIEWSTATE"
+          id="__VIEWSTATE"
+          value="/wEPDwULLTE0NTQ0MjI3MTgPZBYCZg9kFgJmD2QWAgIDD2QWAgIBD2QWCAIBDzwrAAgBAA8WAh4OXyFVc2VWaWV3U3RhdGVnZBYCZg9kFgJmD2QWAmYPZBYCZg9kFgJmD2QWAgIBDzwrAAQBAA8WAh4PRGF0YVNvdXJjZUJvdW5kZ2RkAgMPPCsACAEADxYCHwBnZBYCZg9kFgICAQ9kFgJmD2QWBGYPZBYCZg9kFgICAQ88KwAKAQAPFgIfAGdkZAIBD2QWAmYPZBYCZg9kFgICAQ88KwAKAQAPFgQfAGcfAWdkZAIFDzwrAAgBAA8WAh8AZ2RkAgcPPCsACAEADxYCHwBnZBYCZg9kFgJmD2QWAmYPZBYCZg9kFgJmD2QWAgIBD2QWBAIDDzwrAAgBAA8WAh8AZ2QWAmYPZBYCAgEPZBYCZg9kFgJmD2QWAgIBDxYCHgRUZXh0Be8aPGRpdiBjbGFzcz0ibDM5Y29udGVudExlZnQiPjxkaXYgY2xhc3M9ImwzOUxlZnRNYWluIj48aDM+PGltZyBzcmM9Imh0dHA6XFxhbmhzdi5odXN0LmVkdS52blxTdHVkZW50XDIwMTg0MTQzLmpwZyIgc3R5bGU9IndpZHRoOjMwcHg7aGVpZ2h0OjMwcHg7Ym9yZGVyLXJhZGl1czogNTAlOyI+IFRy4bqnbiBUaMOgbmggTG9uZzwvaDM+PHVsIGNsYXNzPSJzaXRlTWFwIj48bGk+PGEgaHJlZj0iLi4vQWNjb3VudC9OZXdzRmVlZC5hc3B4Ij5UaMawIGLDoW8gPHNwYW4gY2xhc3M9ImJhZGdlIiBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjojOUMxMDEwOyI+MDwvc3Bhbj48L2E+PC9saT48bGk+PGEgaHJlZj0iLi4vQWNjb3VudC9DaGFuZ2VQYXNzd29yZC5hc3B4Ij7EkOG7lWkgbeG6rXQga2jhuql1PC9hPjwvbGk+PGxpPjxhIGhyZWY9Imh0dHA6Ly8yMDIuMTkxLjU2LjE2MDo4MDgwL3Jlc2V0cGFzc3dvcmQiPkPhuqVwIGzhuqFpIG3huq10IGto4bqpdSBFbWFpbCB0csaw4budbmc8L2E+PC9saT48bGk+PGEgaHJlZj0iLi4vQWNjb3VudC9Mb2dvdXQuYXNweCI+VGhvw6F0IMSRxINuZyBuaOG6rXA8L2E+PC9saT48bGk+PGEgaHJlZj0iLi4vU3R1ZGVudHMvZ2V0TmV3RW1haWxQYXNzd29yZC5hc3B4Ij5UaMO0bmcgdGluIG3huq10IGto4bqpdSBFbWFpbCBj4bqlcCBt4bubaTwvYT48L2xpPjxsaT48YSBocmVmPSIuLi90ZW1wL1hhY05oYW5Ub0toYWlZVGUuYXNweCI+WMOhYyBuaOG6rW4ga2hhaSBiw6FvIHkgdOG6vzwvYT48L2xpPjwvdWw+PC9kaXY+PC9kaXY+PGJyPjxkaXYgY2xhc3M9ImwzOWNvbnRlbnRMZWZ0Ij48ZGl2IGNsYXNzPSJsMzlMZWZ0TWFpbiI+PGgzPlF14bqjbiBsw70gaOG7kyBzxqEgc2luaCB2acOqbjwvaDM+PHVsIGNsYXNzPSJzaXRlTWFwIj48bGk+PGEgaHJlZj0iLi4vIj5UaMO0bmcgdGluIHNpbmggdmnDqm48L2E+PC9saT48bGk+PGEgaHJlZj0iLi4vU3R1ZGVudHMvdXBkYXRlU3R1ZGVudFByb2ZpbGVzLmFzcHgiPkPhuq1wIG5o4bqtdCB0aMO0bmcgdGluIGPDoSBuaMOibjwvYT48L2xpPjxsaT48YSBocmVmPSIuLi9TdHVkZW50cy9TdHVkZW50R3JvdXBJbmZvLmFzcHgiPlRow7RuZyB0aW4gbOG7m3Agc2luaCB2acOqbjwvYT48L2xpPjwvdWw+PC9kaXY+PC9kaXY+PGJyPjxkaXYgY2xhc3M9ImwzOWNvbnRlbnRMZWZ0Ij48ZGl2IGNsYXNzPSJsMzlMZWZ0TWFpbiI+PGgzPsSQw6BvIHThuqFvPC9oMz48dWwgY2xhc3M9InNpdGVNYXAiPjxsaSBjbGFzcz0iY29zdWIiPjxhIGhyZWY9ImphdmFzY3JpcHQ6dm9pZCgwKSI+Q2jGsMahbmcgdHLDrG5oIMSRw6BvIHThuqFvPC9hPjx1bCBjbGFzcz0ic3ViU2l0ZW1hcCI+PGxpPjxhIGhyZWY9Ii4uL1N0dWRlbnRzL1N0dWRlbnRQcm9ncmFtLmFzcHgiPkNoxrDGoW5nIHRyw6xuaCDEkcOgbyB04bqhbyBzaW5oIHZpw6puPC9hPjwvbGk+PGxpPjxhIGhyZWY9Ii4uL3B1Yi9Db3Vyc2VMaXN0cy5hc3B4Ij5EYW5oIG3hu6VjIGjhu41jIHBo4bqnbjwvYT48L2xpPjwvdWw+PC9saT48bGkgY2xhc3M9ImNvc3ViIj48YSBocmVmPSJqYXZhc2NyaXB0OnZvaWQoMCkiPkvhur8gaG/huqFjaCBo4buNYyB04bqtcDwvYT48dWwgY2xhc3M9InN1YlNpdGVtYXAiPjxsaT48YSBocmVmPSIuLi9TdHVkZW50cy9Db3Vyc2VzUmVnaXN0ZXIuYXNweCI+xJDEg25nIGvDvSBo4buNYyBwaOG6p248L2E+PC9saT48bGk+PGEgaHJlZj0iLi4vU3R1ZGVudHMvVGltZXRhYmxlcy5hc3B4Ij5UaOG7nWkga2jDs2EgYmnhu4N1PC9hPjwvbGk+PGxpPjxhIGhyZWY9Ii4uL3B1Yi9DaGVja0NsYXNzUmVnaXN0ZXIuYXNweCI+VHJhIGPhu6l1IMSRxINuZyBrw70gbOG7m3AgY8OhYyBr4buzPC9hPjwvbGk+PC91bD48L2xpPjxsaSBjbGFzcz0iY29zdWIiPjxhIGhyZWY9ImphdmFzY3JpcHQ6dm9pZCgwKSI+S+G6v3QgcXXhuqMgaOG7jWMgdOG6rXA8L2E+PHVsIGNsYXNzPSJzdWJTaXRlbWFwIj48bGk+PGEgaHJlZj0iLi4vU3R1ZGVudHMvVG9laWNNYXJrcy5hc3B4Ij5L4bq/dCBxdeG6oyB0aGkgVE9FSUM8L2E+PC9saT48bGk+PGEgaHJlZj0iLi4vU3R1ZGVudHMvU3R1ZGVudENvdXJzZU1hcmtzLmFzcHgiPkLhuqNuZyDEkWnhu4NtIGPDoSBuaMOibjwvYT48L2xpPjxsaT48YSBocmVmPSIuLi9TdHVkZW50cy9TdHVkZW50Q291cnNlR3JhZGUuYXNweCI+QuG6o25nIMSRaeG7g20gaOG7jWMgcGjhuqduPC9hPjwvbGk+PGxpPjxhIGhyZWY9Ii4uL1N0dWRlbnRzL1N0dWRlbnRDaGVja0lucHV0R3JhZGVUZXJtLmFzcHgiPktp4buDbSB0cmEgbmjhuq1wIMSRaeG7g20ga+G7syBt4bubaSBuaOG6pXQ8L2E+PC9saT48L3VsPjwvbGk+PGxpIGNsYXNzPSJjb3N1YiI+PGEgaHJlZj0iamF2YXNjcmlwdDp2b2lkKDApIj7EkOG7kyDDoW4gLSBU4buRdCBuZ2hp4buHcDwvYT48dWwgY2xhc3M9InN1YlNpdGVtYXAiPjxsaT48YSBocmVmPSIuLi9TdHVkZW50cy9GaW5hbFByb2plY3RSZWdpc3RlclJlc3VsdC5hc3B4Ij5L4bq/dCBxdeG6oyB4w6l0IG5o4bqtbiDEkEFUTjwvYT48L2xpPjxsaT48YSBocmVmPSIuLi9TdHVkZW50cy9HcmFkdWF0ZVJlZ2lzdGVyLmFzcHgiPsSQxINuZyBrw70geMOpdCB04buRdCBuZ2hp4buHcDwvYT48L2xpPjwvdWw+PC9saT48bGk+PGEgaHJlZj0iLi4vU3R1ZGVudHMvVGltZXRhYmxlc1RlbXAuYXNweCI+VGjhu51pIGtow7NhIGJp4buDdSB04bqhbSB0aOG7nWk8L2E+PC9saT48L3VsPjwvZGl2PjwvZGl2Pjxicj48ZGl2IGNsYXNzPSJsMzljb250ZW50TGVmdCI+PGRpdiBjbGFzcz0ibDM5TGVmdE1haW4iPjxoMz5UxrAgduG6pW4gdHLhu7FjIHR1eeG6v248L2gzPjx1bCBjbGFzcz0ic2l0ZU1hcCI+PGxpPjxhIGhyZWY9Ii4uL1N0dWRlbnRzL1FBLmFzcHgiPkjhu49pIMSRw6FwIC0gVMawIHbhuqVuIHRy4buxYyB0dXnhur9uPC9hPjwvbGk+PC91bD48L2Rpdj48L2Rpdj48YnI+PGRpdiBjbGFzcz0ibDM5Y29udGVudExlZnQiPjxkaXYgY2xhc3M9ImwzOUxlZnRNYWluIj48aDM+VMOgaSBjaMOtbmggaOG7jWMgduG7pTwvaDM+PHVsIGNsYXNzPSJzaXRlTWFwIj48bGk+PGEgaHJlZj0iLi4vU3R1ZGVudHMvQ2hlY2tUdWl0aW9uLmFzcHgiPlRow7RuZyB0aW4gY8O0bmcgbuG7oyBo4buNYyBwaMOtPC9hPjwvbGk+PGxpPjxhIGhyZWY9Ii4uL1N0dWRlbnRzL09ubGluZV9UdWl0aW9uUGF5LmFzcHgiPlRoYW5oIHRvw6FuIGjhu41jIHBow60gdHLhu7FjIHR1eeG6v248L2E+PC9saT48L3VsPjwvZGl2PjwvZGl2Pjxicj48ZGl2IGNsYXNzPSJsMzljb250ZW50TGVmdCI+PGRpdiBjbGFzcz0ibDM5TGVmdE1haW4iPjxoMz5E4buLY2ggduG7pSBow6BuaCBjaMOtbmg8L2gzPjx1bCBjbGFzcz0ic2l0ZU1hcCI+PGxpPjxhIGhyZWY9Imh0dHA6Ly9jdHN2Lmh1c3QuZWR1LnZuLyMvZ2lheS10by94aW4tY2FwLWdpYXkiPsSQSyBj4bqlcCBnaeG6pXkgdOG7nTwvYT48L2xpPjwvdWw+PC9kaXY+PC9kaXY+PGJyPmQCBw9kFgICAQ88KwAmAwAPFgIfAWdkBg9kEBYGZgIBAgICAwIEAgUWBjwrAAwCABYCHgtHbG9iYWxJbmRleGYLPCsABAEAFgIeCVNvcnRJbmRleGY8KwAMAgAWAh8DAgELPCsABAEAFgIfBAIBPCsADAEAFgIfAwICPCsADAEAFgIfAwIDPCsADAEAFgIfAwIEPCsADAEAFgIfAwIFDxYGAgECAQIBAgECAQIBFgEFe0RldkV4cHJlc3MuV2ViLkdyaWRWaWV3RGF0YUNvbHVtbiwgRGV2RXhwcmVzcy5XZWIudjE5LjIsIFZlcnNpb249MTkuMi4zLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjg4ZDE3NTRkNzAwZTQ5YRg8KwAHAQUUKwACZGRkGAEFHl9fQ29udHJvbHNSZXF1aXJlUG9zdEJhY2tLZXlfXxYEBR9jdGwwMCRjdGwwMCRUb3BNZW51UGFuZSRtZW51VG9wBSVjdGwwMCRjdGwwMCRUb3BNZW51UGFuZSRjdGwxMCRtZW51VG9wBTtjdGwwMCRjdGwwMCRjb250ZW50UGFuZSRNYWluUGFuZWwkTWFpbkNvbnRlbnQkZ3ZDb3Vyc2VNYXJrcwVLY3RsMDAkY3RsMDAkY29udGVudFBhbmUkTWFpblBhbmVsJE1haW5Db250ZW50JGd2Q291cnNlTWFya3MkRFhGaWx0ZXJSb3dNZW51bCD/CzHeYcZ0oXU+R6oIP9gUzqMzjE0qPV0DqIcw21Q="
+        />
+      </div>
+
+      <script type="text/javascript">
+        //<![CDATA[
+        var theForm = document.forms['aspnetForm']
+        if (!theForm) {
+          theForm = document.aspnetForm
+        }
+        function __doPostBack(eventTarget, eventArgument) {
+          if (!theForm.onsubmit || theForm.onsubmit() != false) {
+            theForm.__EVENTTARGET.value = eventTarget
+            theForm.__EVENTARGUMENT.value = eventArgument
+            theForm.submit()
+          }
+        }
+        //]]>
+      </script>
+
+      <script
+        src="https://ctt-sis.hust.edu.vn/WebResource.axd?d=4hDuIVz3xb6rsKgCYC7wfz8MYtTplyZJ5GD_tHfXvJymZyb5QyozCHqDm1kjw-RtahifkV6CfwYgn-tGSNikrRL-tez9Xlsb4C0LVnuB1HY1&amp;t=636862707087933587"
+        type="text/javascript"
+      ></script>
+
+      <div class="aspNetHidden">
+        <input
+          type="hidden"
+          name="__VIEWSTATEGENERATOR"
+          id="__VIEWSTATEGENERATOR"
+          value="947B1EBD"
+        />
+        <input
+          type="hidden"
+          name="__EVENTVALIDATION"
+          id="__EVENTVALIDATION"
+          value="/wEdAAKHwIEXZOVNG3dOAfWxlL0p25f45C+4NC29WhzMG85uQa+NSW9w09/CSoIxWxr9VCR+UEQ45a78GTSxhfUN3LtQ"
+        />
+      </div>
+      <script
+        id="dxis_1591973329"
+        src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_11,1_12,1_23,1_63,1_14,1_15,1_48,1_17,1_24,1_33,1_19,1_210,1_221,1_222,1_208,1_224,1_233,1_235,1_236,1_226,1_227,1_231,1_237,1_180,1_181,1_34-OugLk"
+        type="text/javascript"
+      ></script>
+      <div
+        id="ctl00_ctl00_HeaderPane_EB"
+        class="dxpnl-bar dxpnlControl_Mulberry headerPane"
+        style="
+          width: 100%;
+          padding-left: 0px;
+          padding-right: 0px;
+          padding-top: 0px;
+          padding-bottom: 0px;
+        "
+      >
+        <div class="dxpnl-bar-tmpl dxpnl-np">
+          <div style="height: 50px">
+            <a href="http://ctt-daotao.hust.edu.vn/">
+              <img
+                class="dxeImage_Mulberry"
+                id="ctl00_ctl00_HeaderPane_EBT_imgLogo"
+                src="https://ctt-sis.hust.edu.vn/Content/Images/logo-cttdt.png"
+                alt=""
+                style="height: 100%"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="dxpnlControl_Mulberry" id="ctl00_ctl00_HeaderPane">
+        <div class="dxpnl-acc">
+          <div class="headerPane">
+            <div class="container">
+              <a href="http://ctt-daotao.hust.edu.vn/">
+                <img
+                  class="dxeImage_Mulberry"
+                  id="ctl00_ctl00_HeaderPane_imgLogo"
+                  src="https://ctt-sis.hust.edu.vn/Content/Images/logo-cttdt.png"
+                  alt=""
+                  style="height: 100%"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script id="dxss_1124381250" type="text/javascript">
+        ASPx.AddSelectedItems('ctl00_ctl00_HeaderPane', [[['dxpnl-expanded'], [''], ['', 'EB']]])
+        ASPx.createControl(ASPxClientPanel, 'ctl00_ctl00_HeaderPane', '', {
+          uniqueID: 'ctl00$ctl00$HeaderPane',
+          collapseWindowWidth: 600,
+          animationType: 'slide',
+        })
+
+        //-->
+      </script>
+      <div id="ctl00_ctl00_TopMenuPane_EB" class="dxpnl-bar dxpnlControl_Mulberry topMenuExpandBar">
+        <div id="ctl00_ctl00_TopMenuPane_EBB" class="dxpnl-btn dxpnl-fp">
+          <img
+            id="ctl00_ctl00_TopMenuPane_EBBI"
+            class="dxWeb_pnlExpand_Mulberry"
+            src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="dxpnlControl_Mulberry topMenu" id="ctl00_ctl00_TopMenuPane">
+        <div class="dxpnl-acc">
+          <div class="dxpnl-cc">
+            <div class="dxmLite_Mulberry dxm-ltr">
+              <div
+                class="dxm-main dxm-horizontal dxm-autoWidth dxm-noWrap"
+                id="ctl00_ctl00_TopMenuPane_menuTop"
+                style="width: 100%"
+              >
+                <ul class="dx dxm-image-l">
+                  <li class="dxm-item dxm-subMenu" style="font-size: Medium">
+                    <div class="dxm-content dxm-hasText">
+                      <img
+                        class="dxIcon_arrange_sendbackward_16x16 dxm-image dx-vam"
+                        src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                        alt=""
+                      /><span class="dx-vam">Đ&#224;o tạo Đại học</span>
+                    </div>
+                    <div class="dxm-popOut">
+                      <img
+                        class="dxWeb_mHorizontalPopOut_Mulberry dxm-pImage"
+                        src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                        alt="v"
+                      />
+                    </div>
+                  </li>
+                  <li class="dxm-spacing"></li>
+                  <li class="dxm-item dxm-subMenu" style="font-size: Medium">
+                    <div class="dxm-content dxm-hasText">
+                      <img
+                        class="dxIcon_arrange_sendbackward_16x16 dxm-image dx-vam"
+                        src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                        alt=""
+                      /><span class="dx-vam">Đ&#224;o tạo Sau đại học</span>
+                    </div>
+                    <div class="dxm-popOut">
+                      <img
+                        class="dxWeb_mHorizontalPopOut_Mulberry dxm-pImage"
+                        src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                        alt="v"
+                      />
+                    </div>
+                  </li>
+                  <li class="dxm-spacing"></li>
+                  <li class="dxm-item dxm-subMenu" style="font-size: Medium">
+                    <div class="dxm-content dxm-hasText">
+                      <img
+                        class="dxIcon_arrange_sendbackward_16x16 dxm-image dx-vam"
+                        src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                        alt=""
+                      /><span class="dx-vam">C&#244;ng t&#225;c Sinh vi&#234;n</span>
+                    </div>
+                    <div class="dxm-popOut">
+                      <img
+                        class="dxWeb_mHorizontalPopOut_Mulberry dxm-pImage"
+                        src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                        alt="v"
+                      />
+                    </div>
+                  </li>
+                  <li class="dxm-spacing"></li>
+                  <li class="dxm-item dxm-noSubMenu">
+                    <a
+                      class="dxm-content dxm-hasText dx"
+                      href="http://ctt-sis.hust.edu.vn/pub/SearchGraduation.aspx"
+                      style="font-size: Medium"
+                      ><img
+                        class="dxIcon_arrange_sendbackward_16x16 dxm-image dx-vam"
+                        src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                        alt=""
+                      /><span class="dx-vam">Tra cứu văn bằng</span></a
+                    >
+                  </li>
+                  <li class="dxm-spacing dxm-amis"></li>
+                  <li
+                    class="dxm-item dxm-dropDownMode dxm-noImage dxm-ami"
+                    style="font-size: Medium"
+                  >
+                    <div class="dxm-content dxm-hasText">
+                      <span class="dx-vam">Item</span>
+                    </div>
+                    <div class="dxm-popOut">
+                      <img
+                        class="dxWeb_mAdaptiveMenu_Mulberry dxm-pImage"
+                        src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                        alt="..."
+                      />
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <b class="dx-clear"></b>
+              <div id="ctl00_ctl00_TopMenuPane_menuTop_DXM0_" style="z-index: 20002; display: none">
+                <div class="dxm-shadow dxm-popup" style="font-size: Medium">
+                  <ul class="dx dxm-noImages dxm-gutter">
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=18"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Quy định - Quy chế</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                    <li class="dxm-spacing"></li>
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=19"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">C&#225;c ng&#224;nh đ&#224;o tạo</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                    <li class="dxm-spacing"></li>
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=20"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Kế hoạch học tập</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                    <li class="dxm-spacing"></li>
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=46"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Tin tức - Th&#244;ng b&#225;o</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                    <li class="dxm-spacing"></li>
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=30"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Th&#244;ng tin văn bằng 2</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                    <li class="dxm-spacing"></li>
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=29"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Chương tr&#236;nh đặc biệt</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                    <li class="dxm-spacing"></li>
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=31"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Biểu mẫu</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                    <li class="dxm-spacing"></li>
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=32"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Li&#234;n hệ</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div id="ctl00_ctl00_TopMenuPane_menuTop_DXM1_" style="z-index: 20002; display: none">
+                <div class="dxm-shadow dxm-popup" style="font-size: Medium">
+                  <ul class="dx dxm-noImages dxm-gutter">
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=47"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Tuyển sinh</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                    <li class="dxm-spacing"></li>
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=48"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Đ&#224;o tạo</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                    <li class="dxm-spacing"></li>
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=41"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Mẫu văn bản giấy tờ</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                    <li class="dxm-spacing"></li>
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=42"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Văn bản - Quy chế</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                    <li class="dxm-spacing"></li>
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=43"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Th&#244;ng tin văn bằng</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                    <li class="dxm-spacing"></li>
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=44"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Trang th&#244;ng tin c&#225; nh&#226;n</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                    <li class="dxm-spacing"></li>
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=45"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Li&#234;n hệ</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div id="ctl00_ctl00_TopMenuPane_menuTop_DXM2_" style="z-index: 20002; display: none">
+                <div class="dxm-shadow dxm-popup" style="font-size: Medium">
+                  <ul class="dx dxm-noImages dxm-gutter">
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=7"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Th&#244;ng b&#225;o</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                    <li class="dxm-spacing"></li>
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=9"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Hỏi - Đ&#225;p</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                    <li class="dxm-spacing"></li>
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=53"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Học ph&#237;</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                    <li class="dxm-spacing"></li>
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=11"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Học bổng t&#224;i trợ</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                    <li class="dxm-spacing"></li>
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=12"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Việc l&#224;m</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                    <li class="dxm-spacing"></li>
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=13"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Biểu mẫu</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                    <li class="dxm-spacing"></li>
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=54"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Cựu sinh vi&#234;n</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                    <li class="dxm-spacing"></li>
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=15"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Li&#234;n hệ</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div id="ctl00_ctl00_TopMenuPane_menuTop_DXM4_" style="z-index: 20000; display: none">
+                <div class="dxm-shadow dxm-popup dxm-am" style="font-size: Medium">
+                  <ul class="dx dxm-gutter"></ul>
+                </div>
+              </div>
+            </div>
+            <script id="dxss_162039307" type="text/javascript">
+              ASPx.AddHoverItems('ctl00_ctl00_TopMenuPane_menuTop', [
+                [
+                  ['dxm-hovered', '', ''],
+                  ['color:Beige;background-color:#8C1515;', '', ''],
+                  ['DXI0_', 'DXI1_', 'DXI2_', 'DXI4_'],
+                  ['', 'P', 'T'],
+                ],
+                [
+                  [''],
+                  [''],
+                  [
+                    'DXME0_',
+                    'DXMBC0_',
+                    'DXME1_',
+                    'DXMBC1_',
+                    'DXME2_',
+                    'DXMBC2_',
+                    'DXME4_',
+                    'DXMBC4_',
+                  ],
+                ],
+                [
+                  ['dxm-hovered', ''],
+                  ['color:Beige;background-color:#8C1515;', ''],
+                  [
+                    'DXI0i0_',
+                    'DXI0i1_',
+                    'DXI0i2_',
+                    'DXI0i3_',
+                    'DXI0i4_',
+                    'DXI0i5_',
+                    'DXI0i6_',
+                    'DXI0i7_',
+                    'DXI1i0_',
+                    'DXI1i1_',
+                    'DXI1i2_',
+                    'DXI1i3_',
+                    'DXI1i4_',
+                    'DXI1i5_',
+                    'DXI1i6_',
+                    'DXI2i0_',
+                    'DXI2i1_',
+                    'DXI2i2_',
+                    'DXI2i3_',
+                    'DXI2i4_',
+                    'DXI2i5_',
+                    'DXI2i6_',
+                    'DXI2i7_',
+                    'DXI3_',
+                  ],
+                  ['', 'T'],
+                ],
+              ])
+              ASPx.createControl(
+                ASPxClientMenu,
+                'ctl00_ctl00_TopMenuPane_menuTop',
+                '',
+                {
+                  uniqueID: 'ctl00$ctl00$TopMenuPane$menuTop',
+                  renderData: {
+                    '': [[0], [1], [2], [3], [4]],
+                    0: [[0], [1], [2], [3], [4], [5], [6], [7]],
+                    1: [[0], [1], [2], [3], [4], [5], [6]],
+                    2: [[0], [1], [2], [3], [4], [5], [6], [7]],
+                  },
+                  subMenuFIXOffset: 1,
+                  subMenuFIYOffset: -2,
+                  subMenuLIXOffset: 1,
+                  subMenuLIYOffset: -2,
+                  subMenuXOffset: 1,
+                  subMenuYOffset: -2,
+                },
+                null,
+                null,
+                { adaptiveModeData: 4 }
+              )
+
+              //-->
+            </script>
+          </div>
+          <div class="dxpnl-expanded-tmpl">
+            <div class="dxmLite_Mulberry dxm-ltr">
+              <div
+                class="dxm-main dxm-vertical dxm-autoWidth dxm-noWrap"
+                id="ctl00_ctl00_TopMenuPane_ctl10_menuTop"
+                style="width: 100%"
+              >
+                <ul class="dx dxm-image-l dxm-gutter">
+                  <li class="dxm-item dxm-subMenu" style="font-size: Medium">
+                    <div class="dxm-content dxm-hasText">
+                      <img
+                        class="dxIcon_arrange_sendbackward_16x16 dxm-image dx-vam"
+                        src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                        alt=""
+                      /><span class="dx-vam">Đ&#224;o tạo Đại học</span>
+                    </div>
+                    <div class="dxm-popOut">
+                      <img
+                        class="dxWeb_mVerticalPopOut_Mulberry dxm-pImage"
+                        src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                        alt=">"
+                      />
+                    </div>
+                    <b class="dx-clear"></b>
+                  </li>
+                  <li class="dxm-spacing"></li>
+                  <li class="dxm-item dxm-subMenu" style="font-size: Medium">
+                    <div class="dxm-content dxm-hasText">
+                      <img
+                        class="dxIcon_arrange_sendbackward_16x16 dxm-image dx-vam"
+                        src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                        alt=""
+                      /><span class="dx-vam">Đ&#224;o tạo Sau đại học</span>
+                    </div>
+                    <div class="dxm-popOut">
+                      <img
+                        class="dxWeb_mVerticalPopOut_Mulberry dxm-pImage"
+                        src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                        alt=">"
+                      />
+                    </div>
+                    <b class="dx-clear"></b>
+                  </li>
+                  <li class="dxm-spacing"></li>
+                  <li class="dxm-item dxm-subMenu" style="font-size: Medium">
+                    <div class="dxm-content dxm-hasText">
+                      <img
+                        class="dxIcon_arrange_sendbackward_16x16 dxm-image dx-vam"
+                        src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                        alt=""
+                      /><span class="dx-vam">C&#244;ng t&#225;c Sinh vi&#234;n</span>
+                    </div>
+                    <div class="dxm-popOut">
+                      <img
+                        class="dxWeb_mVerticalPopOut_Mulberry dxm-pImage"
+                        src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                        alt=">"
+                      />
+                    </div>
+                    <b class="dx-clear"></b>
+                  </li>
+                  <li class="dxm-spacing"></li>
+                  <li class="dxm-item dxm-noSubMenu">
+                    <a
+                      class="dxm-content dxm-hasText dx"
+                      href="http://ctt-sis.hust.edu.vn/pub/SearchGraduation.aspx"
+                      style="font-size: Medium"
+                      ><img
+                        class="dxIcon_arrange_sendbackward_16x16 dxm-image dx-vam"
+                        src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                        alt=""
+                      /><span class="dx-vam">Tra cứu văn bằng</span></a
+                    ><b class="dx-clear"></b>
+                  </li>
+                  <li class="dxm-spacing dxm-amis"></li>
+                  <li
+                    class="dxm-item dxm-dropDownMode dxm-noImage dxm-ami"
+                    style="font-size: Medium"
+                  >
+                    <div class="dxm-content dxm-hasText">
+                      <span class="dx-vam">Item</span>
+                    </div>
+                    <div class="dxm-popOut">
+                      <img
+                        class="dxWeb_mAdaptiveMenu_Mulberry dxm-pImage"
+                        src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                        alt="..."
+                      />
+                    </div>
+                    <b class="dx-clear"></b>
+                  </li>
+                </ul>
+              </div>
+              <b class="dx-clear"></b>
+              <div
+                id="ctl00_ctl00_TopMenuPane_ctl10_menuTop_DXM0_"
+                style="z-index: 20002; display: none"
+              >
+                <div class="dxm-shadow dxm-popup" style="font-size: Medium">
+                  <ul class="dx dxm-noImages dxm-gutter">
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=18"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Quy định - Quy chế</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                    <li class="dxm-spacing"></li>
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=19"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">C&#225;c ng&#224;nh đ&#224;o tạo</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                    <li class="dxm-spacing"></li>
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=20"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Kế hoạch học tập</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                    <li class="dxm-spacing"></li>
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=46"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Tin tức - Th&#244;ng b&#225;o</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                    <li class="dxm-spacing"></li>
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=30"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Th&#244;ng tin văn bằng 2</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                    <li class="dxm-spacing"></li>
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=29"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Chương tr&#236;nh đặc biệt</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                    <li class="dxm-spacing"></li>
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=31"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Biểu mẫu</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                    <li class="dxm-spacing"></li>
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=32"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Li&#234;n hệ</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div
+                id="ctl00_ctl00_TopMenuPane_ctl10_menuTop_DXM1_"
+                style="z-index: 20002; display: none"
+              >
+                <div class="dxm-shadow dxm-popup" style="font-size: Medium">
+                  <ul class="dx dxm-noImages dxm-gutter">
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=47"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Tuyển sinh</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                    <li class="dxm-spacing"></li>
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=48"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Đ&#224;o tạo</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                    <li class="dxm-spacing"></li>
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=41"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Mẫu văn bản giấy tờ</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                    <li class="dxm-spacing"></li>
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=42"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Văn bản - Quy chế</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                    <li class="dxm-spacing"></li>
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=43"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Th&#244;ng tin văn bằng</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                    <li class="dxm-spacing"></li>
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=44"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Trang th&#244;ng tin c&#225; nh&#226;n</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                    <li class="dxm-spacing"></li>
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=45"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Li&#234;n hệ</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div
+                id="ctl00_ctl00_TopMenuPane_ctl10_menuTop_DXM2_"
+                style="z-index: 20002; display: none"
+              >
+                <div class="dxm-shadow dxm-popup" style="font-size: Medium">
+                  <ul class="dx dxm-noImages dxm-gutter">
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=7"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Th&#244;ng b&#225;o</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                    <li class="dxm-spacing"></li>
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=9"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Hỏi - Đ&#225;p</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                    <li class="dxm-spacing"></li>
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=53"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Học ph&#237;</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                    <li class="dxm-spacing"></li>
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=11"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Học bổng t&#224;i trợ</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                    <li class="dxm-spacing"></li>
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=12"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Việc l&#224;m</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                    <li class="dxm-spacing"></li>
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=13"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Biểu mẫu</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                    <li class="dxm-spacing"></li>
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=54"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Cựu sinh vi&#234;n</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                    <li class="dxm-spacing"></li>
+                    <li class="dxm-item">
+                      <a
+                        class="dxm-content dxm-hasText dx"
+                        href="http://ctt-daotao.hust.edu.vn/DisplayWeb/DisplayMenu?menu=15"
+                        style="font-size: Medium"
+                        ><span class="dx-vam">Li&#234;n hệ</span></a
+                      ><b class="dx-clear"></b>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div
+                id="ctl00_ctl00_TopMenuPane_ctl10_menuTop_DXM4_"
+                style="z-index: 20000; display: none"
+              >
+                <div class="dxm-shadow dxm-popup dxm-am" style="font-size: Medium">
+                  <ul class="dx dxm-gutter"></ul>
+                </div>
+              </div>
+            </div>
+            <script id="dxss_1020780313" type="text/javascript">
+              ASPx.AddHoverItems('ctl00_ctl00_TopMenuPane_ctl10_menuTop', [
+                [
+                  ['dxm-hovered', '', ''],
+                  ['color:Beige;background-color:#8C1515;', '', ''],
+                  ['DXI0_', 'DXI1_', 'DXI2_', 'DXI3_', 'DXI4_'],
+                  ['', 'P', 'T'],
+                ],
+                [
+                  [''],
+                  [''],
+                  [
+                    'DXME0_',
+                    'DXMBC0_',
+                    'DXME1_',
+                    'DXMBC1_',
+                    'DXME2_',
+                    'DXMBC2_',
+                    'DXME4_',
+                    'DXMBC4_',
+                  ],
+                ],
+                [
+                  ['dxm-hovered', ''],
+                  ['color:Beige;background-color:#8C1515;', ''],
+                  [
+                    'DXI0i0_',
+                    'DXI0i1_',
+                    'DXI0i2_',
+                    'DXI0i3_',
+                    'DXI0i4_',
+                    'DXI0i5_',
+                    'DXI0i6_',
+                    'DXI0i7_',
+                    'DXI1i0_',
+                    'DXI1i1_',
+                    'DXI1i2_',
+                    'DXI1i3_',
+                    'DXI1i4_',
+                    'DXI1i5_',
+                    'DXI1i6_',
+                    'DXI2i0_',
+                    'DXI2i1_',
+                    'DXI2i2_',
+                    'DXI2i3_',
+                    'DXI2i4_',
+                    'DXI2i5_',
+                    'DXI2i6_',
+                    'DXI2i7_',
+                  ],
+                  ['', 'T'],
+                ],
+              ])
+              ASPx.createControl(
+                ASPxClientMenu,
+                'ctl00_ctl00_TopMenuPane_ctl10_menuTop',
+                '',
+                {
+                  uniqueID: 'ctl00$ctl00$TopMenuPane$ctl10$menuTop',
+                  renderData: {
+                    '': [[0], [1], [2], [3], [4]],
+                    0: [[0], [1], [2], [3], [4], [5], [6], [7]],
+                    1: [[0], [1], [2], [3], [4], [5], [6]],
+                    2: [[0], [1], [2], [3], [4], [5], [6], [7]],
+                  },
+                  subMenuFIXOffset: 1,
+                  subMenuFIYOffset: -2,
+                  subMenuLIXOffset: 1,
+                  subMenuLIYOffset: -2,
+                  subMenuXOffset: 1,
+                  subMenuYOffset: -2,
+                  isVertical: true,
+                },
+                null,
+                null,
+                { adaptiveModeData: 4 }
+              )
+
+              //-->
+            </script>
+          </div>
+        </div>
+      </div>
+      <script id="dxss_1845996416" type="text/javascript">
+        ASPx.AddHoverItems('ctl00_ctl00_TopMenuPane', [[['dxpnl-btnHover'], [''], ['EBB']]])
+        ASPx.AddPressedItems('ctl00_ctl00_TopMenuPane', [[['dxpnl-btnPressed'], [''], ['EBB']]])
+        ASPx.AddSelectedItems('ctl00_ctl00_TopMenuPane', [
+          [['dxpnl-expanded'], [''], ['', 'EB']],
+          [['dxpnl-btnSelected'], [''], ['EBB']],
+        ])
+        ASPx.createControl(ASPxClientPanel, 'ctl00_ctl00_TopMenuPane', '', {
+          uniqueID: 'ctl00$ctl00$TopMenuPane',
+          collapseWindowWidth: 600,
+          animationType: 'slide',
+        })
+
+        //-->
+      </script>
+
+      <div class="dxpnlControl_Mulberry breadCrumbPanel" id="ctl00_ctl00_breadCrumbPane">
+        <div id="breadCrumb">
+          <ul class="breadCrumbList">
+            <li class="start cap1"><a href="../">Trang chủ</a><span class="muiTen1"></span></li>
+            <li class="cap2">
+              <a href="javascript:void(0)">Bảng điểm học phần</a><span class="muiTen2"></span>
+            </li>
+          </ul>
+          <div class="clear"></div>
+        </div>
+      </div>
+
+      <table class="dxpnlControl_Mulberry contentPanel" id="ctl00_ctl00_contentPane">
+        <tr>
+          <td style="vertical-align: Top">
+            <script type="text/javascript">
+              $(document).ready(function () {
+                window.setTimeout(function () {
+                  $('.alert')
+                    .fadeTo(1000, 0)
+                    .slideUp(1000, function () {
+                      $(this).remove()
+                    })
+                }, 8000)
+              })
+            </script>
+
+            <div
+              style="
+                padding: 5px;
+                background-color: rgba(255, 0, 0, 0.4);
+                position: fixed;
+                width: 100%;
+                z-index: 9999;
+                top: 0px;
+                left: 0px;
+              "
+            ></div>
+
+            <table style="width: 100%">
+              <tr>
+                <td style="vertical-align: top; margin: 0px">
+                  <div
+                    id="ctl00_ctl00_contentPane_MainPanel_leftMenuPane_EB"
+                    class="dxpnl-bar dxpnlControl_Mulberry LeftMenuExpandBar"
+                  >
+                    <div
+                      id="ctl00_ctl00_contentPane_MainPanel_leftMenuPane_EBB"
+                      class="dxpnl-btn dxpnl-fp"
+                    >
+                      <img
+                        id="ctl00_ctl00_contentPane_MainPanel_leftMenuPane_EBBI"
+                        class="dxWeb_pnlExpand_Mulberry"
+                        src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="dxpnlControl_Mulberry leftMenuPanel"
+                    id="ctl00_ctl00_contentPane_MainPanel_leftMenuPane"
+                  >
+                    <div class="dxpnl-acc">
+                      <div style="width: 285px; padding-top: 10px">
+                        <div class="l39contentLeft">
+                          <div class="l39LeftMain">
+                            <h3>
+                              <img
+                                src="image/download.png"
+                                style="width: 30px; height: 30px; border-radius: 50%"
+                              />
+                              Trần Thành Long
+                            </h3>
+                            <ul class="siteMap">
+                              <li>
+                                <a href="../Account/NewsFeed.aspx"
+                                  >Thư báo
+                                  <span class="badge" style="background-color: #9c1010">0</span></a
+                                >
+                              </li>
+                              <li>
+                                <a href="../Account/ChangePassword.aspx">Đổi mật khẩu</a>
+                              </li>
+                              <li>
+                                <a href="http://202.191.56.160:8080/resetpassword"
+                                  >Cấp lại mật khẩu Email trường</a
+                                >
+                              </li>
+                              <li>
+                                <a href="../Account/Logout.aspx">Thoát đăng nhập</a>
+                              </li>
+                              <li>
+                                <a href="../Students/getNewEmailPassword.aspx"
+                                  >Thông tin mật khẩu Email cấp mới</a
+                                >
+                              </li>
+                              <li>
+                                <a href="../temp/XacNhanToKhaiYTe.aspx">Xác nhận khai báo y tế</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <br />
+                        <div class="l39contentLeft">
+                          <div class="l39LeftMain">
+                            <h3>Quản lý hồ sơ sinh viên</h3>
+                            <ul class="siteMap">
+                              <li><a href="../">Thông tin sinh viên</a></li>
+                              <li>
+                                <a href="../Students/updateStudentProfiles.aspx"
+                                  >Cập nhật thông tin cá nhân</a
+                                >
+                              </li>
+                              <li>
+                                <a href="../Students/StudentGroupInfo.aspx"
+                                  >Thông tin lớp sinh viên</a
+                                >
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <br />
+                        <div class="l39contentLeft">
+                          <div class="l39LeftMain">
+                            <h3>Đào tạo</h3>
+                            <ul class="siteMap">
+                              <li class="cosub">
+                                <a href="javascript:void(0)">Chương trình đào tạo</a>
+                                <ul class="subSitemap">
+                                  <li>
+                                    <a href="../Students/StudentProgram.aspx"
+                                      >Chương trình đào tạo sinh viên</a
+                                    >
+                                  </li>
+                                  <li>
+                                    <a href="../pub/CourseLists.aspx">Danh mục học phần</a>
+                                  </li>
+                                </ul>
+                              </li>
+                              <li class="cosub">
+                                <a href="javascript:void(0)">Kế hoạch học tập</a>
+                                <ul class="subSitemap">
+                                  <li>
+                                    <a href="../Students/CoursesRegister.aspx">Đăng ký học phần</a>
+                                  </li>
+                                  <li>
+                                    <a href="../Students/Timetables.aspx">Thời khóa biểu</a>
+                                  </li>
+                                  <li>
+                                    <a href="../pub/CheckClassRegister.aspx"
+                                      >Tra cứu đăng ký lớp các kỳ</a
+                                    >
+                                  </li>
+                                </ul>
+                              </li>
+                              <li class="cosub">
+                                <a href="javascript:void(0)">Kết quả học tập</a>
+                                <ul class="subSitemap">
+                                  <li>
+                                    <a href="../Students/ToeicMarks.aspx">Kết quả thi TOEIC</a>
+                                  </li>
+                                  <li>
+                                    <a href="./StudentCourseMarks.html">Bảng điểm cá nhân</a>
+                                  </li>
+                                  <li>
+                                    <a href="./StudentCourseGrade.html">Bảng điểm học phần</a>
+                                  </li>
+                                  <li>
+                                    <a href="./StudentCheckInputGradeTerm.html"
+                                      >Kiểm tra nhập điểm kỳ mới nhất</a
+                                    >
+                                  </li>
+                                </ul>
+                              </li>
+                              <li class="cosub">
+                                <a href="javascript:void(0)">Đồ án - Tốt nghiệp</a>
+                                <ul class="subSitemap">
+                                  <li>
+                                    <a href="../Students/FinalProjectRegisterResult.aspx"
+                                      >Kết quả xét nhận ĐATN</a
+                                    >
+                                  </li>
+                                  <li>
+                                    <a href="../Students/GraduateRegister.aspx"
+                                      >Đăng ký xét tốt nghiệp</a
+                                    >
+                                  </li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="../Students/TimetablesTemp.aspx"
+                                  >Thời khóa biểu tạm thời</a
+                                >
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <br />
+                        <div class="l39contentLeft">
+                          <div class="l39LeftMain">
+                            <h3>Tư vấn trực tuyến</h3>
+                            <ul class="siteMap">
+                              <li>
+                                <a href="../Students/QA.aspx">Hỏi đáp - Tư vấn trực tuyến</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <br />
+                        <div class="l39contentLeft">
+                          <div class="l39LeftMain">
+                            <h3>Tài chính học vụ</h3>
+                            <ul class="siteMap">
+                              <li>
+                                <a href="./CheckTuition.html">Thông tin công nợ học phí</a>
+                              </li>
+                              <li>
+                                <a href="../Students/Online_TuitionPay.aspx"
+                                  >Thanh toán học phí trực tuyến</a
+                                >
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <br />
+                        <div class="l39contentLeft">
+                          <div class="l39LeftMain">
+                            <h3>Dịch vụ hành chính</h3>
+                            <ul class="siteMap">
+                              <li>
+                                <a href="http://ctsv.hust.edu.vn/#/giay-to/xin-cap-giay"
+                                  >ĐK cấp giấy tờ</a
+                                >
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <br />
+                      </div>
+                    </div>
+                  </div>
+                  <script id="dxss_282055630" type="text/javascript">
+                    ASPx.AddHoverItems('ctl00_ctl00_contentPane_MainPanel_leftMenuPane', [
+                      [['dxpnl-btnHover'], [''], ['EBB']],
+                    ])
+                    ASPx.AddPressedItems('ctl00_ctl00_contentPane_MainPanel_leftMenuPane', [
+                      [['dxpnl-btnPressed'], [''], ['EBB']],
+                    ])
+                    ASPx.AddSelectedItems('ctl00_ctl00_contentPane_MainPanel_leftMenuPane', [
+                      [['dxpnl-expanded'], [''], ['', 'EB']],
+                      [['dxpnl-btnSelected'], [''], ['EBB']],
+                    ])
+                    ASPx.createControl(
+                      ASPxClientPanel,
+                      'ctl00_ctl00_contentPane_MainPanel_leftMenuPane',
+                      '',
+                      {
+                        uniqueID: 'ctl00$ctl00$contentPane$MainPanel$leftMenuPane',
+                        collapseWindowWidth: 600,
+                        animationType: 'slide',
+                      }
+                    )
+
+                    //-->
+                  </script>
+                </td>
+
+                <td style="width: 100%; vertical-align: top; margin: 0px; padding: 10px">
+                  <div class="MainContentTitle">
+                    <h3><span class="glyphicon glyphicon-th-list"></span> THÔNG TIN NHẬP ĐIỂM THEO HỌC KỲ</h3>
+
+                    <hr />
+                  </div>
+                  <div class="MainContent">
+                    <table
+                      class="dxgvControl dxgv"
+                      id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks"
+                      style="width: 100%; border-collapse: separate"
+                    >
+                      <tr>
+                        <td>
+                          <table
+                            id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXTitle"
+                            style="width: 100%"
+                          >
+                            <tr>
+                              <td class="dxgvTitlePanel">Bảng thông tin nhập điểm</td>
+                            </tr>
+                          </table>
+                          <div
+                            id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_grouppanel"
+                            class="dxgvGroupPanel"
+                            oncontextmenu="return ASPx.GVContextMenu(&#39;ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks&#39;,event);"
+                            style="white-space: normal"
+                          >
+                            Kéo cột lên đây để nhóm theo cột
+                          </div>
+                          <div
+                            id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXAGroupPanel"
+                            class="dxgvEAHP dxgvAdaptiveGroupPanel"
+                            oncontextmenu="return ASPx.GVContextMenu(&#39;ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks&#39;,event);"
+                            style="display: none"
+                          >
+                            Kéo cột lên đây để nhóm theo cột
+                          </div>
+                          <div
+                            id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXAHeaderPanel"
+                            class="dxgvAdaptiveHeaderPanel"
+                            oncontextmenu="return ASPx.GVContextMenu(&#39;ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks&#39;,event);"
+                            style="display: none"
+                          >
+                            <div
+                              id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXADHeader"
+                              class="dxgvADH"
+                              style="display: none"
+                            >
+                              <table>
+                                <tr class="dxgvADHTR">
+                                  <td></td>
+                                </tr>
+                              </table>
+                            </div>
+                          </div>
+                          <table
+                            id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXMainTable"
+                            class="dxgvTable dxgvRBB"
+                            oncontextmenu="return ASPx.GVContextMenu(&#39;ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks&#39;,event);"
+                            style="width: 100%; empty-cells: show"
+                          >
+                            <tr
+                              id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXHeadersRow0"
+                            >
+                              <td
+                                id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_col0"
+                                class="dxgvHeader bg-CTT"
+                                style="border-top-width: 0px; border-left-width: 0px"
+                              >
+                                <table style="width: 100%">
+                                  <tr>
+                                    <td>Mã lớp</td>
+                                    <td style="width: 1px; text-align: right">
+                                      <span class="dx-vam">&nbsp;</span
+                                      ><img
+                                        class="dxGridView_gvHeaderSortDown dx-vam"
+                                        src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                                        alt="Descending"
+                                        style="margin-left: 5px"
+                                      />
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                              <td
+                                id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_col2"
+                                class="dxgvHeader bg-CTT"
+                                style="width: 500px; border-top-width: 0px; border-left-width: 0px"
+                              >
+                                <table style="width: 100%">
+                                  <tr>
+                                    <td>Tên lớp</td>
+                                    <td style="width: 1px; text-align: right">
+                                      <span class="dx-vam">&nbsp;</span>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                              <td
+                                id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_col1"
+                                class="dxgvHeader bg-CTT"
+                                style="border-top-width: 0px; border-left-width: 0px"
+                              >
+                                <table style="width: 100%">
+                                  <tr>
+                                    <td>Điểm QT</td>
+                                    <td style="width: 1px; text-align: right">
+                                      <span class="dx-vam">&nbsp;</span
+                                      ><img
+                                        class="dxGridView_gvHeaderSortDown dx-vam"
+                                        src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                                        alt="Descending"
+                                        style="margin-left: 5px"
+                                      />
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+
+                              <td
+                                id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_col3"
+                                class="dxgvHeader bg-CTT"
+                                style="border-top-width: 0px; border-left-width: 0px"
+                              >
+                                <table style="width: 100%">
+                                  <tr>
+                                    <td>TT điểm QT</td>
+                                    <td style="width: 1px; text-align: right">
+                                      <span class="dx-vam">&nbsp;</span>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                              <td
+                                id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_col4"
+                                class="dxgvHeader bg-CTT"
+                                style="border-top-width: 0px; border-left-width: 0px"
+                              >
+                                <table style="width: 100%">
+                                  <tr>
+                                    <td>Điểm thi</td>
+                                    <td style="width: 1px; text-align: right">
+                                      <span class="dx-vam">&nbsp;</span>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                              <td
+                                id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_col5"
+                                class="dxgvHeader bg-CTT"
+                                style="
+                                  border-top-width: 0px;
+                                  border-left-width: 0px;
+                                  border-right-width: 0px;
+                                "
+                              >
+                                <table style="width: 100%">
+                                  <tr>
+                                    <td>TT điểm thi</td>
+                                    <td style="width: 1px; text-align: right">
+                                      <span class="dx-vam">&nbsp;</span>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr
+                              id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFilterRow"
+                              class="dxgvFilterRow"
+                            >
+                              <td class="dxgv" style="text-align: Right">
+                                <table style="width: 100%">
+                                  <tr>
+                                    <td style="width: 100%; padding-right: 2px">
+                                      <table
+                                        class="dxeTextBoxSys dxeTextBox dxeTextBoxDefaultWidthSys"
+                                        id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFREditorcol0"
+                                        style="width: 100%"
+                                      >
+                                        <tr>
+                                          <td class="dxic" style="width: 100%">
+                                            <input
+                                              class="dxeEditArea dxeEditAreaSys"
+                                              id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFREditorcol0_I"
+                                              name="ctl00$ctl00$contentPane$MainPanel$MainContent$gvCourseMarks$DXFREditorcol0"
+                                              onfocus="ASPx.EGotFocus(&#39;ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFREditorcol0&#39;)"
+                                              onblur="ASPx.ELostFocus(&#39;ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFREditorcol0&#39;)"
+                                              onchange="ASPx.EValueChanged(&#39;ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFREditorcol0&#39;)"
+                                              type="text"
+                                            />
+                                          </td>
+                                        </tr>
+                                      </table>
+                                      <script id="dxss_735127245" type="text/javascript">
+                                        ASPx.createControl(
+                                          ASPxClientTextBox,
+                                          'ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFREditorcol0',
+                                          '',
+                                          {
+                                            uniqueID:
+                                              'ctl00$ctl00$contentPane$MainPanel$MainContent$gvCourseMarks$DXFREditorcol0',
+                                            scStates: 6,
+                                            scPostfix: '',
+                                          },
+                                          {
+                                            ValueChanged: function (s, event) {
+                                              ASPx.GVFilterChanged(
+                                                'ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks',
+                                                s
+                                              )
+                                            },
+                                            KeyDown: function (s, event) {
+                                              ASPx.GVFilterKeyPress(
+                                                'ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks',
+                                                s,
+                                                event
+                                              )
+                                            },
+                                            UserInput: function (s, event) {
+                                              ASPx.GVFilterUserInput(
+                                                'ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks',
+                                                s
+                                              )
+                                            },
+                                          },
+                                          null,
+                                          {
+                                            decorationStyles: [
+                                              {
+                                                key: 'F',
+                                                className: 'dxeFocused',
+                                                cssText: '',
+                                              },
+                                            ],
+                                          }
+                                        )
+
+                                        //-->
+                                      </script>
+                                    </td>
+                                    <td>
+                                      <img
+                                        class="dxGridView_gvFilterRowButton"
+                                        onclick="ASPx.GVFilterRowMenu(&#39;ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks&#39;,0,this)"
+                                        src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                                        alt="Open filter row popup menu"
+                                        style="cursor: pointer"
+                                      />
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                              <td class="dxgv">
+                                <table style="width: 100%">
+                                  <tr>
+                                    <td style="width: 100%; padding-right: 2px">
+                                      <table
+                                        class="dxeTextBoxSys dxeTextBox dxeTextBoxDefaultWidthSys"
+                                        id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFREditorcol1"
+                                        style="width: 100%"
+                                      >
+                                        <tr>
+                                          <td class="dxic" style="width: 100%">
+                                            <input
+                                              class="dxeEditArea dxeEditAreaSys"
+                                              id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFREditorcol1_I"
+                                              name="ctl00$ctl00$contentPane$MainPanel$MainContent$gvCourseMarks$DXFREditorcol1"
+                                              onfocus="ASPx.EGotFocus(&#39;ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFREditorcol1&#39;)"
+                                              onblur="ASPx.ELostFocus(&#39;ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFREditorcol1&#39;)"
+                                              onchange="ASPx.EValueChanged(&#39;ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFREditorcol1&#39;)"
+                                              type="text"
+                                            />
+                                          </td>
+                                        </tr>
+                                      </table>
+                                      <script id="dxss_1222660531" type="text/javascript">
+                                        ASPx.createControl(
+                                          ASPxClientTextBox,
+                                          'ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFREditorcol1',
+                                          '',
+                                          {
+                                            uniqueID:
+                                              'ctl00$ctl00$contentPane$MainPanel$MainContent$gvCourseMarks$DXFREditorcol1',
+                                            scStates: 6,
+                                            scPostfix: '',
+                                          },
+                                          {
+                                            ValueChanged: function (s, event) {
+                                              ASPx.GVFilterChanged(
+                                                'ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks',
+                                                s
+                                              )
+                                            },
+                                            KeyDown: function (s, event) {
+                                              ASPx.GVFilterKeyPress(
+                                                'ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks',
+                                                s,
+                                                event
+                                              )
+                                            },
+                                            UserInput: function (s, event) {
+                                              ASPx.GVFilterUserInput(
+                                                'ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks',
+                                                s
+                                              )
+                                            },
+                                          },
+                                          null,
+                                          {
+                                            decorationStyles: [
+                                              {
+                                                key: 'F',
+                                                className: 'dxeFocused',
+                                                cssText: '',
+                                              },
+                                            ],
+                                          }
+                                        )
+
+                                        //-->
+                                      </script>
+                                    </td>
+                                    <td>
+                                      <img
+                                        class="dxGridView_gvFilterRowButton"
+                                        onclick="ASPx.GVFilterRowMenu(&#39;ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks&#39;,1,this)"
+                                        src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                                        alt="Open filter row popup menu"
+                                        style="cursor: pointer"
+                                      />
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                              <td class="dxgv">
+                                <table style="width: 100%">
+                                  <tr>
+                                    <td style="width: 100%; padding-right: 2px">
+                                      <table
+                                        class="dxeTextBoxSys dxeTextBox dxeTextBoxDefaultWidthSys"
+                                        id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFREditorcol2"
+                                        style="width: 100%"
+                                      >
+                                        <tr>
+                                          <td class="dxic" style="width: 100%">
+                                            <input
+                                              class="dxeEditArea dxeEditAreaSys"
+                                              id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFREditorcol2_I"
+                                              name="ctl00$ctl00$contentPane$MainPanel$MainContent$gvCourseMarks$DXFREditorcol2"
+                                              onfocus="ASPx.EGotFocus(&#39;ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFREditorcol2&#39;)"
+                                              onblur="ASPx.ELostFocus(&#39;ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFREditorcol2&#39;)"
+                                              onchange="ASPx.EValueChanged(&#39;ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFREditorcol2&#39;)"
+                                              type="text"
+                                            />
+                                          </td>
+                                        </tr>
+                                      </table>
+                                      <script id="dxss_836420787" type="text/javascript">
+                                        ASPx.createControl(
+                                          ASPxClientTextBox,
+                                          'ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFREditorcol2',
+                                          '',
+                                          {
+                                            uniqueID:
+                                              'ctl00$ctl00$contentPane$MainPanel$MainContent$gvCourseMarks$DXFREditorcol2',
+                                            scStates: 6,
+                                            scPostfix: '',
+                                          },
+                                          {
+                                            ValueChanged: function (s, event) {
+                                              ASPx.GVFilterChanged(
+                                                'ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks',
+                                                s
+                                              )
+                                            },
+                                            KeyDown: function (s, event) {
+                                              ASPx.GVFilterKeyPress(
+                                                'ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks',
+                                                s,
+                                                event
+                                              )
+                                            },
+                                            UserInput: function (s, event) {
+                                              ASPx.GVFilterUserInput(
+                                                'ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks',
+                                                s
+                                              )
+                                            },
+                                          },
+                                          null,
+                                          {
+                                            decorationStyles: [
+                                              {
+                                                key: 'F',
+                                                className: 'dxeFocused',
+                                                cssText: '',
+                                              },
+                                            ],
+                                          }
+                                        )
+
+                                        //-->
+                                      </script>
+                                    </td>
+                                    <td>
+                                      <img
+                                        class="dxGridView_gvFilterRowButton"
+                                        onclick="ASPx.GVFilterRowMenu(&#39;ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks&#39;,2,this)"
+                                        src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                                        alt="Open filter row popup menu"
+                                        style="cursor: pointer"
+                                      />
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                              <td class="dxgv" style="text-align: Right">
+                                <table style="width: 100%">
+                                  <tr>
+                                    <td style="width: 100%; padding-right: 2px">
+                                      <table
+                                        class="dxeTextBoxSys dxeTextBox dxeTextBoxDefaultWidthSys"
+                                        id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFREditorcol3"
+                                        style="width: 100%"
+                                      >
+                                        <tr>
+                                          <td class="dxic" style="width: 100%">
+                                            <input
+                                              class="dxeEditArea dxeEditAreaSys"
+                                              id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFREditorcol3_I"
+                                              name="ctl00$ctl00$contentPane$MainPanel$MainContent$gvCourseMarks$DXFREditorcol3"
+                                              onfocus="ASPx.EGotFocus(&#39;ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFREditorcol3&#39;)"
+                                              onblur="ASPx.ELostFocus(&#39;ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFREditorcol3&#39;)"
+                                              onchange="ASPx.EValueChanged(&#39;ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFREditorcol3&#39;)"
+                                              type="text"
+                                            />
+                                          </td>
+                                        </tr>
+                                      </table>
+                                      <script id="dxss_452196403" type="text/javascript">
+                                        ASPx.createControl(
+                                          ASPxClientTextBox,
+                                          'ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFREditorcol3',
+                                          '',
+                                          {
+                                            uniqueID:
+                                              'ctl00$ctl00$contentPane$MainPanel$MainContent$gvCourseMarks$DXFREditorcol3',
+                                            scStates: 6,
+                                            scPostfix: '',
+                                          },
+                                          {
+                                            ValueChanged: function (s, event) {
+                                              ASPx.GVFilterChanged(
+                                                'ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks',
+                                                s
+                                              )
+                                            },
+                                            KeyDown: function (s, event) {
+                                              ASPx.GVFilterKeyPress(
+                                                'ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks',
+                                                s,
+                                                event
+                                              )
+                                            },
+                                            UserInput: function (s, event) {
+                                              ASPx.GVFilterUserInput(
+                                                'ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks',
+                                                s
+                                              )
+                                            },
+                                          },
+                                          null,
+                                          {
+                                            decorationStyles: [
+                                              {
+                                                key: 'F',
+                                                className: 'dxeFocused',
+                                                cssText: '',
+                                              },
+                                            ],
+                                          }
+                                        )
+
+                                        //-->
+                                      </script>
+                                    </td>
+                                    <td>
+                                      <img
+                                        class="dxGridView_gvFilterRowButton"
+                                        onclick="ASPx.GVFilterRowMenu(&#39;ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks&#39;,3,this)"
+                                        src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                                        alt="Open filter row popup menu"
+                                        style="cursor: pointer"
+                                      />
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                              <td class="dxgv">
+                                <table style="width: 100%">
+                                  <tr>
+                                    <td style="width: 100%; padding-right: 2px">
+                                      <table
+                                        class="dxeTextBoxSys dxeTextBox dxeTextBoxDefaultWidthSys"
+                                        id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFREditorcol4"
+                                        style="width: 100%"
+                                      >
+                                        <tr>
+                                          <td class="dxic" style="width: 100%">
+                                            <input
+                                              class="dxeEditArea dxeEditAreaSys"
+                                              id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFREditorcol4_I"
+                                              name="ctl00$ctl00$contentPane$MainPanel$MainContent$gvCourseMarks$DXFREditorcol4"
+                                              onfocus="ASPx.EGotFocus(&#39;ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFREditorcol4&#39;)"
+                                              onblur="ASPx.ELostFocus(&#39;ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFREditorcol4&#39;)"
+                                              onchange="ASPx.EValueChanged(&#39;ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFREditorcol4&#39;)"
+                                              type="text"
+                                            />
+                                          </td>
+                                        </tr>
+                                      </table>
+                                      <script id="dxss_1302920141" type="text/javascript">
+                                        ASPx.createControl(
+                                          ASPxClientTextBox,
+                                          'ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFREditorcol4',
+                                          '',
+                                          {
+                                            uniqueID:
+                                              'ctl00$ctl00$contentPane$MainPanel$MainContent$gvCourseMarks$DXFREditorcol4',
+                                            scStates: 6,
+                                            scPostfix: '',
+                                          },
+                                          {
+                                            ValueChanged: function (s, event) {
+                                              ASPx.GVFilterChanged(
+                                                'ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks',
+                                                s
+                                              )
+                                            },
+                                            KeyDown: function (s, event) {
+                                              ASPx.GVFilterKeyPress(
+                                                'ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks',
+                                                s,
+                                                event
+                                              )
+                                            },
+                                            UserInput: function (s, event) {
+                                              ASPx.GVFilterUserInput(
+                                                'ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks',
+                                                s
+                                              )
+                                            },
+                                          },
+                                          null,
+                                          {
+                                            decorationStyles: [
+                                              {
+                                                key: 'F',
+                                                className: 'dxeFocused',
+                                                cssText: '',
+                                              },
+                                            ],
+                                          }
+                                        )
+
+                                        //-->
+                                      </script>
+                                    </td>
+                                    <td>
+                                      <img
+                                        class="dxGridView_gvFilterRowButton"
+                                        onclick="ASPx.GVFilterRowMenu(&#39;ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks&#39;,4,this)"
+                                        src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                                        alt="Open filter row popup menu"
+                                        style="cursor: pointer"
+                                      />
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                              <td class="dxgv" style="border-right-width: 0px">
+                                <table style="width: 100%">
+                                  <tr>
+                                    <td style="width: 100%; padding-right: 2px">
+                                      <table
+                                        class="dxeTextBoxSys dxeTextBox dxeTextBoxDefaultWidthSys"
+                                        id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFREditorcol5"
+                                        style="width: 100%"
+                                      >
+                                        <tr>
+                                          <td class="dxic" style="width: 100%">
+                                            <input
+                                              class="dxeEditArea dxeEditAreaSys"
+                                              id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFREditorcol5_I"
+                                              name="ctl00$ctl00$contentPane$MainPanel$MainContent$gvCourseMarks$DXFREditorcol5"
+                                              onfocus="ASPx.EGotFocus(&#39;ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFREditorcol5&#39;)"
+                                              onblur="ASPx.ELostFocus(&#39;ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFREditorcol5&#39;)"
+                                              onchange="ASPx.EValueChanged(&#39;ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFREditorcol5&#39;)"
+                                              type="text"
+                                            />
+                                          </td>
+                                        </tr>
+                                      </table>
+                                      <script id="dxss_654867635" type="text/javascript">
+                                        ASPx.createControl(
+                                          ASPxClientTextBox,
+                                          'ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFREditorcol5',
+                                          '',
+                                          {
+                                            uniqueID:
+                                              'ctl00$ctl00$contentPane$MainPanel$MainContent$gvCourseMarks$DXFREditorcol5',
+                                            scStates: 6,
+                                            scPostfix: '',
+                                          },
+                                          {
+                                            ValueChanged: function (s, event) {
+                                              ASPx.GVFilterChanged(
+                                                'ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks',
+                                                s
+                                              )
+                                            },
+                                            KeyDown: function (s, event) {
+                                              ASPx.GVFilterKeyPress(
+                                                'ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks',
+                                                s,
+                                                event
+                                              )
+                                            },
+                                            UserInput: function (s, event) {
+                                              ASPx.GVFilterUserInput(
+                                                'ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks',
+                                                s
+                                              )
+                                            },
+                                          },
+                                          null,
+                                          {
+                                            decorationStyles: [
+                                              {
+                                                key: 'F',
+                                                className: 'dxeFocused',
+                                                cssText: '',
+                                              },
+                                            ],
+                                          }
+                                        )
+
+                                        //-->
+                                      </script>
+                                    </td>
+                                    <td>
+                                      <img
+                                        class="dxGridView_gvFilterRowButton"
+                                        onclick="ASPx.GVFilterRowMenu(&#39;ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks&#39;,5,this)"
+                                        src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                                        alt="Open filter row popup menu"
+                                        style="cursor: pointer"
+                                      />
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr
+                              id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXDataRow0"
+                              class="dxgvDataRow"
+                            >
+                              <td class="dx-nowrap dxgv dx-ar">130920</td>
+                              <td class="dx-nowrap dxgv">Kỹ năng ITSS học bằng tiếng Nhật 1</td>
+                              <td class="dx-nowrap dxgv">5.5</td>
+                              <td class="dx-nowrap dxgv dx-ar">mới nhập</td>
+                              <td class="dx-nowrap dxgv">5.5</td>
+                              <td class="dx-nowrap dxgv" style="border-right-width: 0px">
+                                mới nhập
+                              </td>
+                            </tr>
+
+                            <tr
+                              id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXDataRow40"
+                              class="dxgvDataRow"
+                            >
+                              <td class="dx-nowrap dxgv dx-ar">130902</td>
+                              <td class="dx-nowrap dxgv">Hệ phân tán</td>
+                              <td class="dx-nowrap dxgv">8</td>
+                              <td class="dx-nowrap dxgv dx-ar">mới nhập</td>
+                              <td class="dx-nowrap dxgv">7</td>
+                              <td class="dx-nowrap dxgv" style="border-right-width: 0px">
+                                mới nhập
+                              </td>
+                            </tr>
+                            <tr
+                              id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXDataRow40"
+                              class="dxgvDataRow"
+                            >
+                              <td class="dx-nowrap dxgv dx-ar">130903</td>
+                              <td class="dx-nowrap dxgv">Truyền thông đa phương tiện</td>
+                              <td class="dx-nowrap dxgv">7</td>
+                              <td class="dx-nowrap dxgv dx-ar">mới nhập</td>
+                              <td class="dx-nowrap dxgv">7.5</td>
+                              <td class="dx-nowrap dxgv" style="border-right-width: 0px">
+                                mới nhập
+                              </td>
+                            </tr>
+                            <tr
+                              id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXDataRow40"
+                              class="dxgvDataRow"
+                            >
+                              <td class="dx-nowrap dxgv dx-ar">130906</td>
+                              <td class="dx-nowrap dxgv">Linux hệ nhúng theo chuẩn kỹ năng ITSS</td>
+                              <td class="dx-nowrap dxgv">9</td>
+                              <td class="dx-nowrap dxgv dx-ar">mới nhập</td>
+                              <td class="dx-nowrap dxgv">9</td>
+                              <td class="dx-nowrap dxgv" style="border-right-width: 0px">
+                                mới nhập
+                              </td>
+                            </tr>
+                            <tr
+                              id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXDataRow40"
+                              class="dxgvDataRow"
+                            >
+                              <td class="dx-nowrap dxgv dx-ar">130911</td>
+                              <td class="dx-nowrap dxgv">Tiếng Nhật 8</td>
+                              <td class="dx-nowrap dxgv">6</td>
+                              <td class="dx-nowrap dxgv dx-ar">mới nhập</td>
+                              <td class="dx-nowrap dxgv">6</td>
+                              <td class="dx-nowrap dxgv" style="border-right-width: 0px">
+                                mới nhập
+                              </td>
+                            </tr>
+                            <tr
+                              id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXDataRow40"
+                              class="dxgvDataRow"
+                            >
+                              <td class="dx-nowrap dxgv dx-ar">131151</td>
+                              <td class="dx-nowrap dxgv">Nghiên cứu tốt nghiệp 1</td>
+                              <td class="dx-nowrap dxgv">8</td>
+                              <td class="dx-nowrap dxgv dx-ar">mới nhập</td>
+                              <td class="dx-nowrap dxgv">8</td>
+                              <td class="dx-nowrap dxgv" style="border-right-width: 0px">
+                                mới nhập
+                              </td>
+                            </tr>
+                          </table>
+
+                          <div class="dxmLite dxm-ltr">
+                            <div
+                              id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFilterRowMenu"
+                              style="z-index: 20000; display: none"
+                            >
+                              <div class="dxm-popupMain dxm-shadow dxm-popup">
+                                <ul class="dx dxm-gutter">
+                                  <li class="dxm-item">
+                                    <div class="dxm-content dxm-hasText">
+                                      <img
+                                        class="dxWeb_mSubMenuItem dxm-image dx-vam"
+                                        src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                                        alt=""
+                                      /><span class="dx-vam">Begins with</span>
+                                    </div>
+                                    <b class="dx-clear"></b>
+                                  </li>
+                                  <li class="dxm-spacing"></li>
+                                  <li class="dxm-item">
+                                    <div class="dxm-content dxm-hasText">
+                                      <img
+                                        class="dxWeb_mSubMenuItem dxm-image dx-vam"
+                                        src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                                        alt=""
+                                      /><span class="dx-vam">Contains</span>
+                                    </div>
+                                    <b class="dx-clear"></b>
+                                  </li>
+                                  <li class="dxm-spacing"></li>
+                                  <li class="dxm-item">
+                                    <div class="dxm-content dxm-hasText">
+                                      <img
+                                        class="dxWeb_mSubMenuItem dxm-image dx-vam"
+                                        src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                                        alt=""
+                                      /><span class="dx-vam">Doesn&#39;t contain</span>
+                                    </div>
+                                    <b class="dx-clear"></b>
+                                  </li>
+                                  <li class="dxm-spacing"></li>
+                                  <li class="dxm-item">
+                                    <div class="dxm-content dxm-hasText">
+                                      <img
+                                        class="dxWeb_mSubMenuItem dxm-image dx-vam"
+                                        src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                                        alt=""
+                                      /><span class="dx-vam">Ends with</span>
+                                    </div>
+                                    <b class="dx-clear"></b>
+                                  </li>
+                                  <li class="dxm-spacing"></li>
+                                  <li class="dxm-item">
+                                    <div class="dxm-content dxm-hasText">
+                                      <img
+                                        class="dxWeb_mSubMenuItem dxm-image dx-vam"
+                                        src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                                        alt=""
+                                      /><span class="dx-vam">Equals</span>
+                                    </div>
+                                    <b class="dx-clear"></b>
+                                  </li>
+                                  <li class="dxm-spacing"></li>
+                                  <li class="dxm-item">
+                                    <div class="dxm-content dxm-hasText">
+                                      <img
+                                        class="dxWeb_mSubMenuItem dxm-image dx-vam"
+                                        src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                                        alt=""
+                                      /><span class="dx-vam">Doesn&#39;t equal</span>
+                                    </div>
+                                    <b class="dx-clear"></b>
+                                  </li>
+                                  <li class="dxm-spacing"></li>
+                                  <li class="dxm-item">
+                                    <div class="dxm-content dxm-hasText">
+                                      <img
+                                        class="dxWeb_mSubMenuItem dxm-image dx-vam"
+                                        src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                                        alt=""
+                                      /><span class="dx-vam">Is less than</span>
+                                    </div>
+                                    <b class="dx-clear"></b>
+                                  </li>
+                                  <li class="dxm-spacing"></li>
+                                  <li class="dxm-item">
+                                    <div class="dxm-content dxm-hasText">
+                                      <img
+                                        class="dxWeb_mSubMenuItem dxm-image dx-vam"
+                                        src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                                        alt=""
+                                      /><span class="dx-vam">Is less than or equal to</span>
+                                    </div>
+                                    <b class="dx-clear"></b>
+                                  </li>
+                                  <li class="dxm-spacing"></li>
+                                  <li class="dxm-item">
+                                    <div class="dxm-content dxm-hasText">
+                                      <img
+                                        class="dxWeb_mSubMenuItem dxm-image dx-vam"
+                                        src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                                        alt=""
+                                      /><span class="dx-vam">Is greater than</span>
+                                    </div>
+                                    <b class="dx-clear"></b>
+                                  </li>
+                                  <li class="dxm-spacing"></li>
+                                  <li class="dxm-item">
+                                    <div class="dxm-content dxm-hasText">
+                                      <img
+                                        class="dxWeb_mSubMenuItem dxm-image dx-vam"
+                                        src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                                        alt=""
+                                      /><span class="dx-vam">Is greater than or equal to</span>
+                                    </div>
+                                    <b class="dx-clear"></b>
+                                  </li>
+                                  <li class="dxm-spacing"></li>
+                                  <li
+                                    title="Two wildcard symbols are supported:
+ &#39;%&#39; substitutes zero or more characters;
+ &#39;_&#39; substitutes a single character."
+                                    class="dxm-item"
+                                  >
+                                    <div class="dxm-content dxm-hasText">
+                                      <img
+                                        title="Two wildcard symbols are supported:
+ &#39;%&#39; substitutes zero or more characters;
+ &#39;_&#39; substitutes a single character."
+                                        class="dxWeb_mSubMenuItem dxm-image dx-vam"
+                                        src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                                        alt=""
+                                      /><span
+                                        title="Two wildcard symbols are supported:
+ &#39;%&#39; substitutes zero or more characters;
+ &#39;_&#39; substitutes a single character."
+                                        class="dx-vam"
+                                        >Like (&#39;%&#39;, &#39;_&#39;)</span
+                                      >
+                                    </div>
+                                    <b class="dx-clear"></b>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <script id="dxss_1256880100" type="text/javascript">
+                            ASPx.AddHoverItems(
+                              'ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFilterRowMenu',
+                              [
+                                [[''], [''], ['DXME_']],
+                                [
+                                  ['dxm-hovered', ''],
+                                  ['', ''],
+                                  [
+                                    'DXI0_',
+                                    'DXI1_',
+                                    'DXI2_',
+                                    'DXI3_',
+                                    'DXI4_',
+                                    'DXI5_',
+                                    'DXI6_',
+                                    'DXI7_',
+                                    'DXI8_',
+                                    'DXI9_',
+                                    'DXI10_',
+                                  ],
+                                  ['', 'T'],
+                                ],
+                              ]
+                            )
+                            ASPx.AddSelectedItems(
+                              'ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFilterRowMenu',
+                              [
+                                [
+                                  ['dxm-checked', ''],
+                                  ['', ''],
+                                  [
+                                    'DXI0_',
+                                    'DXI1_',
+                                    'DXI2_',
+                                    'DXI3_',
+                                    'DXI4_',
+                                    'DXI5_',
+                                    'DXI6_',
+                                    'DXI7_',
+                                    'DXI8_',
+                                    'DXI9_',
+                                    'DXI10_',
+                                  ],
+                                  ['', 'T'],
+                                  [
+                                    [
+                                      {
+                                        spriteCssClass: 'dxWeb_mSubMenuItemChecked',
+                                      },
+                                    ],
+                                    [
+                                      {
+                                        spriteCssClass: 'dxWeb_mSubMenuItemChecked',
+                                      },
+                                    ],
+                                    [
+                                      {
+                                        spriteCssClass: 'dxWeb_mSubMenuItemChecked',
+                                      },
+                                    ],
+                                    [
+                                      {
+                                        spriteCssClass: 'dxWeb_mSubMenuItemChecked',
+                                      },
+                                    ],
+                                    [
+                                      {
+                                        spriteCssClass: 'dxWeb_mSubMenuItemChecked',
+                                      },
+                                    ],
+                                    [
+                                      {
+                                        spriteCssClass: 'dxWeb_mSubMenuItemChecked',
+                                      },
+                                    ],
+                                    [
+                                      {
+                                        spriteCssClass: 'dxWeb_mSubMenuItemChecked',
+                                      },
+                                    ],
+                                    [
+                                      {
+                                        spriteCssClass: 'dxWeb_mSubMenuItemChecked',
+                                      },
+                                    ],
+                                    [
+                                      {
+                                        spriteCssClass: 'dxWeb_mSubMenuItemChecked',
+                                      },
+                                    ],
+                                    [
+                                      {
+                                        spriteCssClass: 'dxWeb_mSubMenuItemChecked',
+                                      },
+                                    ],
+                                    [
+                                      {
+                                        spriteCssClass: 'dxWeb_mSubMenuItemChecked',
+                                      },
+                                    ],
+                                  ],
+                                  ['Img', 'PImg'],
+                                ],
+                              ]
+                            )
+                            ASPx.AddDisabledItems(
+                              'ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFilterRowMenu',
+                              [
+                                [
+                                  ['dxm-disabled'],
+                                  [''],
+                                  [
+                                    'DXI0_',
+                                    'DXI1_',
+                                    'DXI2_',
+                                    'DXI3_',
+                                    'DXI4_',
+                                    'DXI5_',
+                                    'DXI6_',
+                                    'DXI7_',
+                                    'DXI8_',
+                                    'DXI9_',
+                                    'DXI10_',
+                                  ],
+                                  ['', 'T'],
+                                ],
+                              ]
+                            )
+                            ASPx.createControl(
+                              ASPxClientPopupMenu,
+                              'ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_DXFilterRowMenu',
+                              '',
+                              {
+                                uniqueID:
+                                  'ctl00$ctl00$contentPane$MainPanel$MainContent$gvCourseMarks$DXFilterRowMenu',
+                                renderData: {
+                                  '': [[0], [1], [2], [3], [4], [5], [6], [7], [8], [9], [10]],
+                                },
+                                allowCheckItems: true,
+                                checkedState: '',
+                                itemCheckedGroups: [
+                                  ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+                                ],
+                                popupVerticalAlign: 'Below',
+                                isContextMenu: true,
+                              },
+                              {
+                                ItemClick: function (s, e) {
+                                  ASPx.GVFilterRowMenuClick(
+                                    'ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks',
+                                    e
+                                  )
+                                },
+                              },
+                              null,
+                              {
+                                items: [
+                                  { name: '1|S' },
+                                  { name: '3|S' },
+                                  { name: '4|S' },
+                                  { name: '2|S' },
+                                  { name: '5|SN' },
+                                  { name: '10|SN' },
+                                  { name: '6|N' },
+                                  { name: '7|N' },
+                                  { name: '8|N' },
+                                  { name: '9|N' },
+                                  { name: '11|L' },
+                                ],
+                              }
+                            )
+
+                            //-->
+                          </script>
+                          <table
+                            id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_LP"
+                            class="dxgvLoadingPanel"
+                            style="left: 0px; top: 0px; z-index: 30000; display: none"
+                          >
+                            <tr>
+                              <td class="dx" style="padding-right: 0px">
+                                <img
+                                  class="dxlp-loadingImage dxlp-imgPosLeft"
+                                  src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                                  alt=""
+                                  style="vertical-align: middle"
+                                />
+                              </td>
+                              <td class="dx" style="padding-left: 0px">
+                                <span
+                                  id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_TL"
+                                  >Loading&hellip;</span
+                                >
+                              </td>
+                            </tr>
+                          </table>
+                          <div
+                            id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_LD"
+                            class="dxgvLoadingDiv"
+                            style="display: none; z-index: 29999; position: absolute"
+                          ></div>
+                          <img
+                            id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_IADD"
+                            class="dxGridView_gvDragAndDropArrowDown"
+                            src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                            alt="Down Arrow"
+                            style="position: absolute; visibility: hidden; top: -100px"
+                          /><img
+                            id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_IADU"
+                            class="dxGridView_gvDragAndDropArrowUp"
+                            src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                            alt="Up Arrow"
+                            style="position: absolute; visibility: hidden; top: -100px"
+                          /><img
+                            id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_IADL"
+                            class="dxGridView_gvDragAndDropArrowLeft"
+                            src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                            alt="Left Arrow"
+                            style="position: absolute; visibility: hidden; top: -100px"
+                          /><img
+                            id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_IADR"
+                            class="dxGridView_gvDragAndDropArrowRight"
+                            src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                            alt="Right Arrow"
+                            style="position: absolute; visibility: hidden; top: -100px"
+                          /><img
+                            id="ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks_IDHF"
+                            class="dxGridView_gvDragAndDropHideColumn"
+                            src="https://ctt-sis.hust.edu.vn/DXR.axd?r=1_86-OugLk"
+                            alt="Hide"
+                            style="position: absolute; visibility: hidden; top: -100px"
+                          />
+                        </td>
+                      </tr>
+                    </table>
+                    <script id="dxss_1492637915" type="text/javascript">
+                      ASPx.createControl(
+                        ASPxClientGridView,
+                        'ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks',
+                        'gvCourseMarks',
+                        {
+                          callBack: function (arg) {
+                            WebForm_DoCallback(
+                              'ctl00$ctl00$contentPane$MainPanel$MainContent$gvCourseMarks',
+                              arg,
+                              ASPx.Callback,
+                              'ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks',
+                              ASPx.CallbackError,
+                              true
+                            )
+                          },
+                          uniqueID: 'ctl00$ctl00$contentPane$MainPanel$MainContent$gvCourseMarks',
+                          stateObject: {
+                            keys: [],
+                            callbackState:
+                              'WBIpcxXKxU0quFyjt5mNnBuikluMNq7ouIBOSLTGySZWweLPWCVURizc5YliYEN1r0EUtm5rxVPPmOdP0ogyEuEidRDuDYdyh3CHDXlxO+Kl71Q8pQiCkRBk+wcymtNueyl4G+Z4YvL+N7i6nBLLxKMmOFxZyLkKb0shrY4yUsUVQ462gSbgRoXWLbhiWu85U37h3L6hs0EzDe1qZy1hklalPJh3eTJpbdrE8d950fe3jLPF24vNpbZWwTfeOaapni5j0W8WtKmaAyJjkt4JMKrkjRKJ7i/Bd6+QCju8zliEY2cC6UMdWDb1mAZtOAcxTFOvt3Ni5q8X5aSez655TFL3A25R6hKeEr+GFUXhhpizChkxIl89hyuF4yuIxrB9jMp8vV+QQ87UtxLWXmhKX9wI/V1JVX2ZgZHg5j2LWmBH1k3xtXPyVGcAUamplTDX9bdlIYcl7QwGtJyXdSvmOcPR9740n8PQpu0QVxVLU6LzzeLReYiAiJyQfEcDzgp7iPaWwDAI/ibL6xrZ7uJtGSZIV4hTTVScC8/MaO+6YzY=',
+                            groupLevelState: {},
+                            selection: '',
+                          },
+                          callBacksEnabled: true,
+                          pageRowCount: 41,
+                          pageRowSize: 10,
+                          pageIndex: -1,
+                          pageCount: 5,
+                          selectedWithoutPageRowCount: 0,
+                          visibleStartIndex: 0,
+                          focusedRowIndex: -1,
+                          allowFocusedRow: false,
+                          allowSelectByItemClick: false,
+                          allowSelectSingleRowOnly: false,
+                          callbackOnFocusedRowChanged: false,
+                          callbackOnSelectionChanged: false,
+                          editState: 0,
+                          editItemVisibleIndex: -1,
+                          searchPanelFilter: '',
+                          allowDelete: true,
+                          allowEdit: true,
+                          allowInsert: true,
+                          columnProp: [
+                            [0, , , 'TermID', , , 0, 2, 0, , , 'N'],
+                            [1, , , 'CourseID', , , 1, 2, 1, , , 'S'],
+                            [2, , , 'CourseName', , , , , 2, , , 'S'],
+                            [3, , , 'CourseUnits', , , , , 3, , , 'N'],
+                            [4, , , 'MarkChar', , , , , 4, , , 'S'],
+                            [5, , , 'NameE', , , , , 5, , , 'S'],
+                          ],
+                          shouldScrollToNewRow: false,
+                          editMode: 2,
+                          indentColumnCount: 0,
+                          allowChangeColumnHierarchy: false,
+                          allowMultiColumnAutoFilter: false,
+                          autoFilterDelay: 1200,
+                          adaptiveColumnsOrder: [5, 4, 3, 2, 1, 0],
+                          filterRowConditions: {
+                            0: 5,
+                            1: 1,
+                            2: 1,
+                            3: 5,
+                            4: 1,
+                            5: 1,
+                          },
+                        },
+                        null,
+                        null,
+                        {
+                          adaptiveModeInfo: {
+                            adaptivityMode: 2,
+                            hideDataCellsWindowInnerWidth: 800,
+                            adaptiveDetailColumnCount: 1,
+                            allowTextTruncationInAdaptiveMode: [
+                              false,
+                              false,
+                              false,
+                              false,
+                              false,
+                              false,
+                            ],
+                            allowHideDataCellsByColumnMinWidth: false,
+                            allowOnlyOneAdaptiveDetailExpanded: true,
+                          },
+                        }
+                      )
+                      ASPxClientGridBase.PostponeInitialize(
+                        'ctl00_ctl00_contentPane_MainPanel_MainContent_gvCourseMarks',
+                        {
+                          commandButtonIDs: [],
+                          styleInfo: {
+                            ei: '<tr class="dxgvEditingErrorRow">\r\n\t<td class="dxgv" data-colSpan="6" style="border-right-width:0px;"></td>\r\n</tr>',
+                            fc: { className: 'dxgvFocusedCell' },
+                            bec: {
+                              className: 'dxgvBatchEditCell dx-nowrap dxgv',
+                            },
+                            bemc: {
+                              className: 'dxgvBatchEditModifiedCell dx-nowrap dxgv',
+                            },
+                            bemergmc: {
+                              className:
+                                'dxgvBatchEditModifiedCell dxgvBatchEditCell dx-nowrap dxgv',
+                            },
+                            bedi: {
+                              className: 'dxgvBatchEditDeletedItem dxgv',
+                            },
+                            sel: { className: 'dxgvSelectedRow' },
+                            fi: { className: 'dxgvFocusedRow' },
+                            fgi: { className: 'dxgvFocusedGroupRow' },
+                            beni: { className: 'dxgvBatchEditNewItem dxgv' },
+                          },
+                        }
+                      )
+
+                      //-->
+                    </script>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+
+      <footer class="footer">
+        <div class="footerContent">
+          <div class="footerMain">
+            <div class="footerLeft"></div>
+            <div class="footerRight">
+              <hr />
+              <b>Trường Đại học Bách Khoa Hà Nội</b>
+              <br /><br />
+              <p>Số 1 Đại Cồ Việt, Hai Bà Trưng, Hà Nội</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <script type="text/javascript">
+        //<![CDATA[
+
+        var callBackFrameUrl =
+          '/WebResource.axd?d=zNgeSAqK1Gtwh3_l2UBPoaPs5GmS3K_28BXT_HNBFnkFNPnNlCOtgEVyw1zts1gXqRaxDv_11AY0mKn9Gfr8iculLlgI2_ww1LLc3qKszUQ1&t=636862707087933587'
+        WebForm_InitCallback() //]]>
+      </script>
+    </form>
+  </body>
+</html>
